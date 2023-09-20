@@ -16,12 +16,13 @@ Notice:
 num = float(input("Enter the currency in USD: "))
 
 #2 create function that does the math
-def convert(num)
-"""this function will convert the USD amount to EUR"""
-   change = num / 0.94
-   return change
+def convert(num):
+    """
+    this function will convert the USD amount to EUR
+    """
+    euro = num * 0.94
+    print(euro)
 
 
-#3 call the function 
-#4 print the result 
-print(convert(num))
+#3 call the function  
+convert(num)
