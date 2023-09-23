@@ -8,17 +8,18 @@ leo = turtle.Turtle()
 print(leo)  # Tells us that leo is refering to the object being defined#
 
 #loop for number of squares 
-def square(t):
-    for i in range(60):
+def square(t, length):
+    for i in range(4):
         #loop for drawing each square
-        for j in range(4):
-            t.fd(100)
-            t.rt(90)
+        t.fd(length)
+        t.lt(90)
 
-        #turning 5 degrees
-        rt(5)
+def multiple(t, n, length, angle):
+    for i in range(n):
+        square(t, length)
+        t.rt(angle)
 
-square(leo)
+multiple(leo, 60, 100, 5)
 
 
 turtle.mainloop()
