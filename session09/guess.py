@@ -8,9 +8,12 @@ player_name = input("Hello, What's your name?")
 #explain rules
 print('Well, '+ player_name + 'I am thinking of a number between 1 and 50:')
 
+#initial start of guesses is 0 when the game is reset
+number_of_guesses = 0
+
 #create while loop that increases guesses and tells user if input if too high or low
 while number_of_guesses < 6:
-    """this functin will increase the number of guesses and output if their guess is too high or low
+    """this iteration will increase the number of guesses and output if their guess is too high or low
     it will then break after the number of guesses has reached a limit of 6"""
     guess = int(input())
     number_of_guesses += 1
