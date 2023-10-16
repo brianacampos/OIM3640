@@ -13,18 +13,36 @@ def matching_ratio(s:str) -> float:
     for line in f: #Iterate through each line, where each line represents an English word (ending with '\n')
     
     """
-    #Open the file of text 
-    f = open(data.words.txt)
 
-    #We need the total amount of words for this ratio so we should count the total amount of words in this list
-    ftotal = count.f
+    count_match = 0 
+    count_total = 0 
 
-    #Refer to file and apply matching requirements 
-    total = 0
+    f = open('data/words.txt')
+    #count the matching words and total words 
     for line in f:
-        if line >= (s*2)
-            total += 1
-        if line in f.firstletter == s.firstletter, line.firstletter == s.lastletter
-            total +=1
+        word = line.strip()
+
+        if
+
+
+    return count_match / count_total
+
+
+    # #Open the file of text 
+    # f = open(data.words.txt)
+
+    # #We need the total amount of words for this ratio so we should count the total amount of words in this list
+    # ftotal = count.f
+
+    # #Refer to file and apply matching requirements 
+    # total = 0
+    # for line in f:
+    #     if line >= (s*2)
+    #         total += 1
+    #     if line in f.firstletter == s.firstletter, line.firstletter == s.lastletter
+    #         total +=1
             
-    matching_ratio(total/ftotal)
+    # matching_ratio(total/ftotal)
+
+ratio = matching_ratio("") 
+print(f'The percentage of matching words is {ratio:;2%}.')
