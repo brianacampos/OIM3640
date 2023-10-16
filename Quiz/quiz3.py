@@ -14,7 +14,7 @@ def matching_ratio(s:str) -> float:
     
     """
     #Open the file of text 
-    f = open('data/words/txt')
+    f = open(data.words.txt)
 
     #We need the total amount of words for this ratio so we should count the total amount of words in this list
     ftotal = count.f
