@@ -53,7 +53,7 @@ def find_words_no_e():
     """
     returns the percentage of the words that don't have the letter "e"
     """
-    f = open('data/word.txt') #Assume words.txt is under data folder
+    f = open('data/word.txt') #Assume words.txt is under data folder#
     counter_no_e = 0
     counter_total = 0
 
@@ -73,12 +73,15 @@ def avoids(word, forbidden):
     """
     returns True if the given word does not use any of the forbidden letters
     """
-    pass
+    for letter in word:
+        if letter in forbidden:
+            return False
+    return True
 
 
-# print(avoids('Babson', 'abcde'))
-# print(avoids('College', 'e'))
-# print(avoids('Boston', 'xyz'))
+print(avoids('Babson', 'abcde'))
+print(avoids('College', 'e'))
+print(avoids('Boston', 'xyz'))
 
 
 def find_words_no_vowels():
