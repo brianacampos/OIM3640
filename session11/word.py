@@ -88,11 +88,20 @@ def find_words_no_vowels():
     """
     returns the percentage of the words that don't have vowel letters
     """
-    pass
+    f = open("data/words.txt")
+    has_no_vowels_count = 0
+    total_count = 0
+
+    for line in f:
+        word = line.strip()
+        total_count += 1
+        if avoids(word,"aeiou"):
+            has_no_vowels_count += 1
+    return has_no_vowels_count/total_count
 
 
-# perc_no_vowel = find_words_no_vowels()
-# print(f'The percentage of the words without vowel letters is {perc_no_vowel*100:.2f}%.')
+perc_no_vowel = find_words_no_vowels()
+print(f'The percentage of the words without vowel letters is {perc_no_vowel*100:.2f}%.')
 
 
 def uses_only(word, available):
@@ -100,19 +109,30 @@ def uses_only(word, available):
     takes a word and a string of letters, and that returns True if the word
     contains only letters in the string available.
     """
-    pass
+    for letter in word:
+        if not letter in available:
+            return False
+        return True
 
 
-# print(uses_only('Babson', 'aBbsonxyz'))
-# print(uses_only('college', 'aBbsonxyz'))
+print(uses_only('Babson', 'aBbsonxyz'))
+print(uses_only('college', 'aBbsonxyz'))
 
 
 def find_words_only_use_planet():
     """"""
-    pass
+    f = open("data/words.txt")
+    only_use_planet_count = 0
+
+    for line in f:
+        word = line.strip()
+        if uses_only(word, "planet"):
+            only_use_planet_count += 1
+            print(word)
+    return only_use_planet_count
 
 
-# print('Number of words that use only letters from "planets" is', find_words_only_use_planet())
+print('Number of words that use only letters from "planets" is', find_words_only_use_planet())
 
 
 def uses_all(word, required):
@@ -120,20 +140,30 @@ def uses_all(word, required):
     takes a word and a string of required letters, and that returns True if
     the word uses all the required letters at least once.
     """
-    pass
+    for letter in required:
+        if not letter in word:
+            return False
+        return True
 
 
 # please write test cases
+print(uses_all("planet", "abc"))
 
 
 def find_words_using_all_vowels():
     """
     return the number of the words that use all the vowel letters
     """
-    pass
+    f = open("data/words.txt")
+    use_all_vowels_count = 0
+    for line in f:
+        word = line.strip()
+        if uses_all(word, "aeiouy"):
+            use_all_vowels_count += 1
+    return use_all_vowels_count
 
 
-# print('The number of words that use all the vowels:', find_words_using_all_vowels())
+print('The number of words that use all the vowels:', find_words_using_all_vowels())
 
 
 def is_abecedarian(word):
@@ -141,21 +171,31 @@ def is_abecedarian(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    pass
+    for i in range(1, len(word)):
+        if word[i] < word[i - 1]:
+            return False
+    return True
 
 
-# print(is_abecedarian('abs'))
-# print(is_abecedarian('college'))
+
+print(is_abecedarian('abs'))
+print(is_abecedarian('college'))
 
 
 def find_abecedarian_words():
     """
     returns the number of abecedarian words
     """
-    pass
+    f = open("data/words.txt")
+    abecedarian_count = 0
+    for line in f:
+        word = line.strip()
+        if is_abecedarian(word):
+            abecedarian_count += 1
+    return abecedarian_count
 
 
-# print(find_abecedarian_words())
+print(find_abecedarian_words())
 
 
 def is_abecedarian_using_recursion(word):
@@ -163,10 +203,14 @@ def is_abecedarian_using_recursion(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    pass
+    if len(word) <= 1:
+        return True
+    if word[0] > word[1]:
+        return False
+    return is_abecedarian_using_recursion(word[1:])
 
 
-# print(is_abecedarian_using_recursion('abcdef'))
+print(is_abecedarian_using_recursion('abcdef'))
 
 
 def is_abecedarian_using_while(word):
@@ -174,6 +218,12 @@ def is_abecedarian_using_while(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    pass
+    index = 1
+    while index < len(word) and word[index] >= word[index - 1]:
+        index += 1
+    if index >= len(word):
+        return True
+    else:
+        return False
 
-# print(is_abecedarian_using_while('abcdef'))
+print(is_abecedarian_using_while('abcdef'))
