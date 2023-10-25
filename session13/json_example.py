@@ -1,6 +1,6 @@
 import urllib.request
 import json
-from configS import OPENWEATHERMAP_WEATHER
+from config import OPENWEATHERMAP_WEATHER
 import pprint
 
 APIKEY = OPENWEATHERMAP_APIKEY
