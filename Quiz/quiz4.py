@@ -6,17 +6,35 @@ You may create additional helper function(s) if needed, but you are not allowed 
 -------------------------------------------------------------------------------
 """
 
+#Import the steps from json file because it will have similar steps and format#
+import urllib.request
+import json
+import pprint
 
+#open link because we need to get information#
+l = "http://107.173.19.148/mass"
+
+#I need to only get the town names from the list 
+names = l.["name"]
+
+#create function where I can now sort the list that I made earlier alphabetically 
 def get_town_names() -> list:
     """
     Returns a sorted list of town names
     """
 
+    list = []
+    for towns in names:
+        for place in names.value():
+            list.append(name)
+    return f.get('name')
+
+#i am able to return the whole list but I am not sure how I can only call one item when i am adressing it by its key 
 
 ## When you've completed your function, uncomment the following lines and run this file to test!
-# names = get_town_names()
-# print(type(names), len(names))
-# print(names)
+names = get_town_names()
+print(type(names), len(names))
+print(names)
 
 ## Expected output:
 ## <class 'list'> 351
@@ -32,10 +50,11 @@ You may create additional helper function(s) or use previous function(s) if need
 """
 
 
-def get_population_by_name(town_name: str) -> int:
+def get_population_by_name(town_name: l) -> int:
     """
     Returns the population of the given town, 0 if the town's name is invalid
     """
+    
 
 
 ## When you've completed your function, uncomment the following lines and run this file to test!
@@ -65,6 +84,9 @@ def find_smallest_town() -> str:
 
     You are not allowed to use key=xxx in any of the built-in functions.
     """
+    d = ['url']
+    small_pop = d.lower() 
+
 
 
 ## When you've completed your function, uncomment the following lines and run this file to test!
